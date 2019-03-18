@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid register-form">
+        <div class="form">
+            <div class="note">
+                <p>This is a simpleRegister Form made using Boostrap.</p>
+            </div>
+
+            <div class="form-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name *" value="" id="urname" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Phone Number *" id="phone" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Password *" id="password" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Confirm Password *" id="conPassword" />
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btnSubmit" onclick="submitForm()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid detailsdiv">
+        <h3>User Details</h3>
+        <table class="table table-striped" id="detailsTable">
+            
+        </table>
+    </div>
+    <script>
+        let submitForm = () => {
+            let uname = document.getElementById("urname").value;
+            let phone = document.getElementById("phone").value;
+            
+            if (uname != '' && phone != '') {
+                let table = document.getElementById("detailsTable");
+                let row = table.insertRow(0);
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                cell1.innerHTML = uname;
+                cell2.innerHTML = phone;
+            } else {
+               alert('Fill The form..!!'); 
+            }
+        }
+    </script>
+</body>
+
+</html>
